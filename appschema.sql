@@ -33,5 +33,5 @@ check_in date not null CHECK (check_in > CURRENT_DATE),
 check_out date not null CHECK(check_out > check_in),
 guest varchar(64) REFERENCES users(email),
 total_price DECIMAL(8,2) not null,
-rating decimal(2,1) not null CHECK (rating > 1 and rating < = 5))
+rating decimal(2,1) not null CHECK (rating > 1 and rating < = 5)
 )
