@@ -24,8 +24,7 @@ num_bathrooms int not null,
 property_type varchar(64) not null,
 amenities varchar(64) not null,
 house_rules varchar(64) not null,
-price decimal(8,2) not null check (price > 0),
-rating decimal(2,1) check ((rating > 1 and rating < = 5) or rating ISNULL)
+price decimal(8,2) not null check (price > 0)
 );
 
 CREATE TABLE IF NOT EXISTS rental(
