@@ -9,7 +9,8 @@ date_of_birth date not null CHECK (date_of_birth - CURRENT_DATE >= 18),
 since date not null CHECK (since > date_of_birth),
 country varchar(16) not null,
 credit_card_type varchar(16) not null,
-credit_card_no varchar(16) UNIQUE not null)
+credit_card_no varchar(16) UNIQUE not null
+);
 
 CREATE TABLE IF NOT EXISTS apartments(
 apartment_id int PRIMARY KEY,
@@ -24,7 +25,8 @@ property_type varchar(64) not null,
 amenities varchar(64) not null,
 house_rules varchar(64) not null,
 price decimal(8,2) not null check (price > 0),
-rating decimal(2,1) check ((rating > 1 and rating < = 5) or rating ISNULL))
+rating decimal(2,1) check ((rating > 1 and rating < = 5) or rating ISNULL)
+);
 
 CREATE TABLE IF NOT EXISTS rental(
 rental_id int PRIMARY KEY,
@@ -33,5 +35,5 @@ check_in date not null CHECK (check_in > CURRENT_DATE),
 check_out date not null CHECK(check_out > check_in),
 guest varchar(64) REFERENCES users(email),
 total_price DECIMAL(8,2) not null,
-rating int not null CHECK (rating > 0 and rating < = 5)
-)
+rating int not null CHECK (rating >= 1 and rating < = 5)
+);
