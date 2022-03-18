@@ -1,53 +1,68 @@
 <html>
 <head>
-    <meta name="viewport" content ="with=device-width,initial-scale=1.0">
-    <title>OPRA8</title>
-    <link rel="stylesheet" href="app/templates/app/style.css">
-</head>
+    <title>User Details</title>
+</head>    
 <body>
-    <section class="header">
-
-
-<body>
-    <h2>Details for {{cust.0}} {{cust.1}}</h2>
-    <a href="/">Back to home</a>
+    <h2>Details for {{user.0}} {{user.1}}</h2>
+    <a href="/users">Back to List of Users</a>
     <br/><br/>
+
+
     <table style='text-align:left'>
         <tr>
-            <th>ID</th>
+            <th>Email</th>
             <td>:</td>
-            <td> {{ cust.5 }} </td>
+            <td> {{ user.2 }} </td>
         </tr>
         <tr>
             <th>First name</th>
             <td>:</td>
-            <td> {{ cust.0 }} </td>
+            <td> {{ user.0 }} </td>
         </tr>
         <tr>
             <th>Last name</th>
             <td>:</td>
-            <td> {{ cust.1 }} </td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>:</td>
-            <td> {{ cust.2 }} </td>
+            <td> {{ user.1 }} </td>
         </tr>
         <tr>
             <th>Date of birth</th>
             <td>:</td>
-            <td> {{ cust.3 }} </td>
+            <td> {{ user.4 }} </td>
         </tr>
         <tr>
-            <th>Since</th>
+            <th>Date of registration</th>
             <td>:</td>
-            <td> {{ cust.4 }} </td>
+            <td> {{ user.5 }} </td>
         </tr>
         <tr>
             <th>Country</th>
             <td>:</td>
-            <td> {{ cust.6 }} </td>
+            <td> {{ user.6 }} </td>
         </tr>
+    </table>
+
+    <br/><br/>
+
+    <h2>Rental History</h2>
+    <table border=1>
+        <thead>
+            <th>Country</th>
+            <th>City</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Total Price</th>
+            <th>Rating</th>
+        </thead>
+        {% for rental in records %}
+        <tr>
+            <td> {{ rental.2 }} </td>
+            <td> {{ rental.3 }} </td>
+            <td> {{ rental.14 }} </td>
+            <td> {{ rental.15 }} </td>
+            <td> {{ rental.17 }} </td>
+            <td> {{ rental.18 }} </td>
+        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
