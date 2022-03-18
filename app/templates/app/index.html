@@ -3,12 +3,12 @@
     <meta name="viewport" content ="with=device-width,initial-scale=1.0">
     <title>OPRA8</title>
     {% load static %}
-    <link rel = "stylesheet", href = "{% static 'app/style.css'%}"
+    <link rel = "stylesheet", href = "{% static '/app/static/app/style.css'%}"
 </head>
 
 <body>
     <section class="header">
-    </section>
+    
     <h2>Customers in the App Store</h2>
     <a href="add">New customer</a>
     <br/><br/>
@@ -36,5 +36,6 @@
         </tr>
         {% endfor %}
     </table>
+    </section>
 </body>
 </html>
