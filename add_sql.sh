@@ -33,3 +33,4 @@ psql ${URI} -f sql/appschema.sql
 psql ${URI} -f sql/users-data.sql
 psql ${URI} -f sql/apartments-data.sql
 psql ${URI} -f sql/rentals-data.sql
+psql ${URI} -f sql/createview.sql
